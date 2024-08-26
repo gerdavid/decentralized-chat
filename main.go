@@ -13,7 +13,7 @@ import (
 
 const (
 	keySize = 2048
-	port    = ":8080"
+	port    = ":8081"
 )
 
 // Message represents a chat message
@@ -126,6 +126,7 @@ func ConnectAndSendMessage(address string, peer *Peer, message Message) {
 }
 
 func main() {
+
 	// Generate RSA key pair for the peer
 	privateKey, err := GenerateKeyPair()
 	if err != nil {
@@ -164,3 +165,4 @@ func main() {
 		ConnectAndSendMessage(peerAddress, peer, message)
 	}
 }
+
